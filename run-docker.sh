@@ -1,0 +1,8 @@
+#!/bin/bash
+
+export POSTGRES_PASSWORD=$(dotenv -p PGPASSWORD)
+export PGPORT=$(dotenv -p PGPORT)
+echo POSTGRES_PASSWORD $POSTGRES_PASSWORD
+echo PGPORT $PGPORT
+
+docker run --rm -e POSTGRES_PASSWORD=$POSTGRES_PASSWORD -p $PGPORT:5432 code-challenge
